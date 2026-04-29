@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+10&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+body{
+    background: #f59a9a;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container{
+    height: 380px;
+    width: 350px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+    padding: 25px;
+    transition: all .2s;
+}
+
+.container .apptitle{
+    text-align: center;
+    font-size: 20px;
+    color: #222;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.container .weapons-box h3{
+    text-align: center;
+    font-weight: 300;
+}
+
+.container .weapons-box .weapons{
+    height: 80px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.container .weapon-box,
+.container .player-choices{
+    height: 120px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.container .weapons-box .weapons div{
+    height: 75px;
+    width: 75px;
+    background: #f59a9a;
+    border: 3px solid #cd6c5c;
+    border-radius: 100%;
+    float: left;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -5px;
+    cursor: pointer;
+}
+
+.container .weapons-box .weapons div img{
+    height: 60px;
+    width: 60px;
+}
+
+.container .score-box{
+    height: 60px;
+    width: 300px;
+    background: #f08080;
+    position: absolute;
+    bottom: 25px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.container .score-box div{
+    height: 40px;
+    width: 85px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    border-right: 4px solid #000;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.container .score-box div:nth-child(3){
+    border-right: none;
+}
+
+.container .score-box div h3 span{
+    color: #fff;
+}
+
+.container .player-choices{
+    height: 170px;
+    margin-top: 40px;
+    overflow: hidden;
+    display: none;
+}
+
+.container .player-choices div{
+    height: 130px;
+    width: 130px;
+    float: left;
+    margin-top: 15px;
+    position: relative;
+    left: -120px;
+}
+
+.container .player-choices div:nth-child(3){
+    transform: rotateY(180deg);
+    position: relative;
+    left: 160px;
+}
+
+.container .player-choices img{
+    height: 130px;
+    width: 130px;
+}
+
+.container .player-choices h3{
+    word-spacing: 45px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.container .player-choices h3 span{
+    font-weight: 200;
+}
+
+.container .player-choices.active div:nth-child(2){
+    left: 0px;
+    transition: all 0.2s;
+    animation: player .8s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes player{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.container .player-choices.active div:nth-child(3){
+    left: 40px;
+    transition: all 0.2s;
+    animation: computer .8s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes computer{
+    0%{
+        transform: rotateY(180deg) rotate(0deg);
+    }
+    50%{
+        transform: rotateY(180deg) rotate(-50deg);
+    }
+    100%{
+        transform: rotateY(180deg) rotate(0deg);
+    }
+}
+
+.container .result-box{
+    text-align: center;
+    font-size: 14px;
+    margin-top: -10px;
+    transition: all 0.2s;
+    display: none;
+}
+
+.container .result-box button{
+    all: unset;
+    height: 30px;
+    width: 90px;
+    background: #f08080;
+    white-space: nowrap;
+    color: #222;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Mobile Media Query */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .container .apptitle {
+        font-size: 18px;
+    }
+
+    .container .weapons-box h3 {
+        font-size: 14px;
+    }
+
+    .container .weapons-box .weapons div {
+        height: 60px;
+        width: 60px;
+        margin-left: 10px;
+    }
+
+    .container .weapons-box .weapons div img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .container .score-box {
+        width: 90%;
+        padding: 5px;
+    }
+
+    .container .score-box div {
+        width: 70px;
+        height: 35px;
+        margin-left: 3px;
+    }
+
+    .container .player-choices {
+        height: 150px;
+    }
+
+    .container .player-choices div {
+        height: 100px;
+        width: 100px;
+    }
+
+    .container .player-choices img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .container .result-box button {
+        width: 80px;
+        height: 25px;
+    }
+}
